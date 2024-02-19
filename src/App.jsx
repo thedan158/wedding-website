@@ -27,7 +27,6 @@ import anh12 from "./assets/images/anh12.jpg";
 import anh13 from "./assets/images/anh13.jpg";
 import anh14 from "./assets/images/anh14.jpg";
 import CountdownClock from "./Countdown";
-import { Container, Button, Link } from "react-floating-action-button";
 
 function SimpleSlider() {
   var settings = {
