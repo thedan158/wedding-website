@@ -366,7 +366,6 @@ function App() {
     }
     setAudioEnabled(!audioEnabled); // Toggle the audio enabled state
   };
-
   useEffect(() => {
     if (!audioPlayed && audioError) {
       setAudioError(false); // Reset the error state
@@ -672,7 +671,13 @@ function App() {
               onClick={toggleAudio}
               style={{ position: "fixed", bottom: "20px", right: "20px" }}
             >
-              <i className={audioEnabled ? "fa-solid fa-volume-high" : "fa-solid fa-volume-xmark"}></i>
+              <i
+                className={
+                  audioEnabled
+                    ? "fa-solid fa-volume-high"
+                    : "fa-solid fa-volume-xmark"
+                }
+              ></i>
             </button>
           </>
           <CountdownClock />
