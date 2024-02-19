@@ -31,6 +31,21 @@ body {
   background-size: cover; /* Cover the entire background */
   background-position: center; /* Center the background image */
 }
+/* Style buttons */
+.btn {
+  background-color: #e0ddaa; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 50%;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: #eeedde;
+}
 .date-image {
   width: 400px;
   height: 600px;
@@ -429,8 +444,6 @@ a:hover {
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
-  padding-left: 10%;
-  padding-right: 10%;
 }
 .timeline-img {
   background-image: url("assets/images/428047756_382960147710081_8260747553863743478_n.jpg");
@@ -549,17 +562,17 @@ a:hover {
   background-position: center;
 }
 .gallery-img:nth-child(1) {
-  background-image: url("assets/images/chi.jpg");
+  background-image: url("assets/images/anh9.jpg");
   background-position-x: right;
 }
 
 .gallery-img:nth-child(2) {
-  background-image: url("assets/images/428047756_382960147710081_8260747553863743478_n.jpg");
+  background-image: url("assets/images/anh12.jpg");
   background-position-y: top;
 }
 
 .gallery-img:nth-child(3) {
-  background-image: url("assets/images/anh.jpg");
+  background-image: url("assets/images/427866520_744558137618451_353491224585213510_n.jpg");
 }
 .chat-container {
   padding: 50px;
@@ -859,7 +872,7 @@ form button {
   .hands {
     height: 60vh;
     width: 100%;
-    background-image: url("assets/images/anh10.jpg");
+    background-image: url("assets/images/anh.jpg");
     background-size: cover;
     background-position-y: center;
     background-attachment: fixed;

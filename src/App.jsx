@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import headerImage from "./assets/images/header2.jpg";
 import hy from "./assets/images/double-happiness (4).png";
 import std from "./assets/images/save-the-date.png";
@@ -27,6 +27,7 @@ import anh12 from "./assets/images/anh12.jpg";
 import anh13 from "./assets/images/anh13.jpg";
 import anh14 from "./assets/images/anh14.jpg";
 import CountdownClock from "./Countdown";
+import { Container, Button, Link } from "react-floating-action-button";
 
 function SimpleSlider() {
   var settings = {
@@ -346,6 +347,9 @@ function Countdown() {
 function App() {
   const [audioError, setAudioError] = useState(false);
   const [audioPlayed, setAudioPlayed] = useState(false);
+  const [audioEnabled, setAudioEnabled] = useState(true); // Track whether the audio is enabled or disabled
+
+  const audioRef = useRef(null);
 
   const handleAudioError = () => {
     setAudioError(true);
@@ -354,6 +358,16 @@ function App() {
   const handleAudioPlay = () => {
     setAudioPlayed(true);
   };
+
+  const toggleAudio = () => {
+    if (audioEnabled) {
+      audioRef.current.pause(); // Pause the audio
+    } else {
+      audioRef.current.play(); // Play the audio
+    }
+    setAudioEnabled(!audioEnabled); // Toggle the audio enabled state
+  };
+
   useEffect(() => {
     if (!audioPlayed && audioError) {
       setAudioError(false); // Reset the error state
@@ -641,8 +655,9 @@ function App() {
           <>
             {!audioError && (
               <audio
+                ref={audioRef}
                 src={backgroundMusic}
-                autoPlay
+                autoPlay={audioEnabled}
                 loop
                 onError={handleAudioError}
                 onPlay={handleAudioPlay}
@@ -651,6 +666,15 @@ function App() {
             {audioError && (
               <p>There was an error playing the audio. Please try again.</p>
             )}
+
+            {/* Floating button to toggle audio */}
+            <button
+              className="btn"
+              onClick={toggleAudio}
+              style={{ position: "fixed", bottom: "20px", right: "20px" }}
+            >
+              <i className={audioEnabled ? "fa-solid fa-volume-high" : "fa-solid fa-volume-xmark"}></i>
+            </button>
           </>
           <CountdownClock />
           <footer>
