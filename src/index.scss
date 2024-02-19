@@ -794,9 +794,10 @@ form button {
 /* <===================QUOTE===================> */
 .quote {
   margin: 10vh 0;
+  width: 100%;
 }
 .quote h1 {
-  width: 55vw;
+  width: 100%;
   font-size: 4rem;
   text-align: center;
   margin: auto;
@@ -807,7 +808,7 @@ form button {
 }
 @media (max-width: 1570px) {
   .quote h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 2rem;
   }
 }

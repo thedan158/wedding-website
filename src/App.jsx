@@ -344,6 +344,21 @@ function Countdown() {
   );
 }
 function App() {
+  const [audioError, setAudioError] = useState(false);
+  const [audioPlayed, setAudioPlayed] = useState(false);
+
+  const handleAudioError = () => {
+    setAudioError(true);
+  };
+
+  const handleAudioPlay = () => {
+    setAudioPlayed(true);
+  };
+  useEffect(() => {
+    if (!audioPlayed && audioError) {
+      setAudioError(false); // Reset the error state
+    }
+  }, [audioPlayed, audioError]);
   useEffect(() => {
     const parallax = document.getElementById("home-img-lg");
     const parallax1 = document.getElementById("parallax1");
@@ -484,15 +499,22 @@ function App() {
           <div className="timeline-img"></div>
           <div className="timings">
             <img src={std} width={200} height={200} />
-            <h2> Tiệc ăn hỏi</h2>
+            <h2> Tiệc trà nhà gái</h2>
             <div className="text">
-              Thứ 6, ngày 8 tháng 3 năm 2024 <br />
-              Nhà gái
+              19h, thứ 5, ngày 7 tháng 3 năm 2024 <br />
+              Thôn Đông Sơn, Kỳ Phong, H. Kỳ Anh, Hà TĨnh
             </div>
-            <h2>Tiệc cưới</h2>
+            <h2> Lễ Đính Hôn</h2>
+            <div className="text">8h, thứ 6, ngày 8 tháng 3 năm 2024</div>
+            <h2> Tiệc trà nhà trai</h2>
             <div className="text">
-              Thứ 7, ngày 9 tháng 3 năm 2024 <br />
-              Khách sạn Ngoại Thương
+              19h, thứ 6, ngày 8 tháng 3 năm 2024 <br />
+              Số 2, Ngõ 12 Xuân Diệu, P. Hưng Trí, Tx. Kỳ Anh
+            </div>
+            <h2>Lễ Thành Hôn</h2>
+            <div className="text">
+              11h, thứ 7, ngày 9 tháng 3 năm 2024 <br />
+              Khách sạn Ngoại Thương, P. Hưng Trí, Tx. Kỳ Anh
             </div>
           </div>
         </div>
@@ -508,7 +530,7 @@ function App() {
                   <div className="image-container">
                     <img src={bride} width={100} height={100} />
                   </div>
-                  <h2> Phan Thị Phượng</h2>
+                  <h2>Phan Phượng</h2>
                   <div className="text">11/12/1995</div>
                   <h2>Nghề nghiệp</h2>
                   <div className="text">
@@ -524,7 +546,7 @@ function App() {
               <div className="timeline-container">
                 <div className="timings">
                   <img src={groom} width={100} height={100} />
-                  <h2> Lê Đào Đức Hiếu</h2>
+                  <h2>Đức Hiếu</h2>
                   <div className="text">30/04/1994</div>
                   <h2>Nghề nghiệp</h2>
                   <div className="text">
@@ -616,7 +638,20 @@ function App() {
           <div className="parting-message reveal">
             <h1>Hope to See You!</h1>
           </div>
-          <audio src={backgroundMusic} autoPlay loop />
+          <>
+            {!audioError && (
+              <audio
+                src={backgroundMusic}
+                autoPlay
+                loop
+                onError={handleAudioError}
+                onPlay={handleAudioPlay}
+              />
+            )}
+            {audioError && (
+              <p>There was an error playing the audio. Please try again.</p>
+            )}
+          </>
           <CountdownClock />
           <footer>
             <h2>Hãy gọi cho chúng mình</h2>
