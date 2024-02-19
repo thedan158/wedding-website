@@ -346,7 +346,7 @@ function Countdown() {
 function App() {
   const [audioError, setAudioError] = useState(false);
   const [audioPlayed, setAudioPlayed] = useState(false);
-  const [audioEnabled, setAudioEnabled] = useState(false); // Track whether the audio is enabled or disabled
+  const [audioEnabled, setAudioEnabled] = useState(true); // Track whether the audio is enabled or disabled
 
   const audioRef = useRef(null);
 
