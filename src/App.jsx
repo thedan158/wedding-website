@@ -337,7 +337,7 @@ function Countdown() {
   const { days, hours, minutes, seconds } = timeLeft;
 
   return (
-    <h3 style={{ margin: 20, fontFamily: "HelloHoney", color: "#e0ddaa" }}>
+    <h3 className="countdown-text">
       {" "}
       {days} ngày {hours} giờ {minutes} phút {seconds} giây còn lại
     </h3>
