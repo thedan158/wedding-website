@@ -468,6 +468,8 @@ a:hover {
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 .timeline-img {
   background-image: url("assets/images/428047756_382960147710081_8260747553863743478_n.jpg");
@@ -516,6 +518,8 @@ a:hover {
   }
   .timeline-container {
     flex-direction: column;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .timeline-container .text {
     text-align: center;
