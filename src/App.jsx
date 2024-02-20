@@ -230,7 +230,7 @@ const ChatDiv = () => {
   return (
     <div id="loichuc" className="chat-container">
       <img src={invitation} width={100} height={100} />
-      <h2 style={{ fontFamily: "Brotherina", fontSize: 50 }}>Sổ Lưu Bút</h2>
+      <h2 style={{ fontFamily: "HelloHoney", fontSize: 50 }}>Sổ Lưu Bút</h2>
       <div className="card-wrapper">
         <div className="card">
           <div>
@@ -291,7 +291,7 @@ const BankDiv = () => {
   return (
     <div id="mungcuoi" className="chat-container">
       <img src={envelope} width={100} height={100} />
-      <h2 style={{ fontFamily: "Brotherina", fontSize: 50 }}>Gửi quà cưới</h2>
+      <h2 style={{ fontFamily: "HelloHoney", fontSize: 50 }}>Gửi Quà Cưới</h2>
       <div className="card-wrapper">
         <div className="card">
           <img src={qr1} width={250} height={250} />
@@ -337,7 +337,7 @@ function Countdown() {
   const { days, hours, minutes, seconds } = timeLeft;
 
   return (
-    <h3 style={{ margin: 20, fontFamily: "Brotherina", color: "#e0ddaa" }}>
+    <h3 style={{ margin: 20, fontFamily: "HelloHoney", color: "#e0ddaa" }}>
       {" "}
       {days} ngày {hours} giờ {minutes} phút {seconds} giây còn lại
     </h3>
@@ -496,7 +496,7 @@ function App() {
             </div>
             <Countdown />
             <h3>Khách sạn</h3>
-            <h2 style={{ fontFamily: "Brotherina", fontSize: 45, margin: 20 }}>
+            <h2 style={{ fontFamily: "HelloHoney", fontSize: 55, margin: 20 }}>
               Ngoại Thương
             </h2>
             <h3>TX. Kỳ Anh, Hà Tĩnh</h3>

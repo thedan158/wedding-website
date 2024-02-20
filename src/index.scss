@@ -13,6 +13,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "HelloHoney";
+  src: url("assets/fonts/HelloHoney.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* <===================CSS VARIABLES===================> */
 
@@ -81,7 +87,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   margin: 40px 0;
 }
 .countdown-box {
@@ -92,7 +98,7 @@ body {
   border-radius: 15px;
   width: 160px;
   height: 160px;
-  margin: 10px;
+  margin: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -266,6 +272,21 @@ h3 {
   .timeline1__event__icon {
     border-radius: 4px 4px 0 0;
   }
+  .countdown-box {
+    background-color: #203239;
+    font-size: 30px;
+    font-weight: 700;
+    color: #dcd6f7;
+    border-radius: 15px;
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }
 .reveal {
   position: relative;
@@ -368,6 +389,9 @@ a:hover {
 @media (max-width: 1000px) {
   nav ul li a {
     font-size: 12px;
+  }
+  nav ul li {
+    margin: 0 10px;
   }
   html {
     font-size: 10px;
@@ -572,7 +596,7 @@ a:hover {
 }
 
 .gallery-img:nth-child(3) {
-  background-image: url("assets/images/anh9.jpg");
+  background-image: url("assets/images/anh13.jpg");
 }
 .chat-container {
   padding: 50px;
@@ -837,7 +861,11 @@ form button {
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
-
+.parting-message h1 {
+  margin-top: 10vh;
+  text-align: center;
+  font-size: 80px;
+}
 /* <===================STAY===================> */
 #stay {
   background-color: var(--grey-color-light);
@@ -872,7 +900,7 @@ form button {
   .hands {
     height: 60vh;
     width: 100%;
-    background-image: url("assets/images/anh.jpg");
+    background-image: url("assets/images/anh10.jpg");
     background-size: cover;
     background-position-y: center;
     background-attachment: fixed;
@@ -933,6 +961,11 @@ form button {
   }
   #registry button {
     margin-inline: auto;
+  }
+  .parting-message h1 {
+    margin-top: 10vh;
+    text-align: center;
+    font-size: 30px;
   }
 }
 
