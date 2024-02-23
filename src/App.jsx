@@ -384,7 +384,7 @@ function App() {
       theme: "light",
       transition: Bounce,
       style: {
-        marginTop: 50,
+        marginTop: 100,
         justifyContent: "center",
         padding: 30,
         fontSize: 20,
