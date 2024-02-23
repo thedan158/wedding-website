@@ -384,8 +384,8 @@ function App() {
       theme: "light",
       transition: Bounce,
       style: {
-        marginTop: 100,
-        justifyContent: "center",
+        fontSize: 18,
+        padding: 10,
       },
     });
     console.log("sent");
