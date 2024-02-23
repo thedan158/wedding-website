@@ -383,6 +383,12 @@ function App() {
       progress: undefined,
       theme: "light",
       transition: Bounce,
+      style: {
+        marginTop: 50,
+        justifyContent: "center",
+        padding: 30,
+        fontSize: 20,
+      },
     });
     console.log("sent");
   };
