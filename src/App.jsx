@@ -386,8 +386,6 @@ function App() {
       style: {
         marginTop: 100,
         justifyContent: "center",
-        padding: 30,
-        fontSize: 20,
       },
     });
     console.log("sent");
