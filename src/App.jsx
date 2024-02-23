@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 import headerImage from "./assets/images/header2.jpg";
 import hy from "./assets/images/double-happiness (4).png";
 import std from "./assets/images/save-the-date.png";
@@ -27,6 +27,7 @@ import anh12 from "./assets/images/anh12.jpg";
 import anh13 from "./assets/images/anh13.jpg";
 import anh14 from "./assets/images/anh14.jpg";
 import CountdownClock from "./Countdown";
+import { toast } from "react-toastify";
 
 function SimpleSlider() {
   var settings = {
@@ -195,9 +196,11 @@ const ModernButton = () => {
   );
 };
 const ChatDiv = () => {
+  const { handleSuccess } = useContext(AppContext);
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [loichucData, setLoichucData] = useState([]);
+
   useEffect(() => {
     const unsubscribe = firestore
       .collection("loichuc")
@@ -215,13 +218,14 @@ const ChatDiv = () => {
     e.preventDefault();
     try {
       if (name.trim() !== "" && message.trim() !== "") {
-        console.log(name, message);
+        await firestore.collection("loichuc").add({
+          name: name, // Replace with the name you want to add
+          description: message, // Replace with the description you want to add
+        });
+        setName("");
+        setMessage("");
+        handleSuccess();
       }
-      await firestore.collection("loichuc").add({
-        name: name, // Replace with the name you want to add
-        description: message, // Replace with the description you want to add
-      });
-      console.log("Document sent successfully!");
     } catch (error) {
       console.error("Error sending document: ", error);
     }
@@ -343,7 +347,11 @@ function Countdown() {
     </h3>
   );
 }
+export const AppContext = createContext();
+
 function App() {
+  const toastId = useRef(null);
+
   const [audioError, setAudioError] = useState(false);
   const [audioPlayed, setAudioPlayed] = useState(false);
   const [audioEnabled, setAudioEnabled] = useState(true); // Track whether the audio is enabled or disabled
@@ -357,7 +365,20 @@ function App() {
   const handleAudioPlay = () => {
     setAudioPlayed(true);
   };
-
+  const handleSuccess = () => {
+    toast.dismiss();
+    toastId.current = toast("🦄 Bạn đã gửi lời chúc thành công !", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+    console.log("sent");
+  };
   const toggleAudio = () => {
     if (audioEnabled) {
       audioRef.current.pause(); // Pause the audio
@@ -416,7 +437,7 @@ function App() {
     // document.getElementById("check").checked = false;
   }
   return (
-    <body>
+    <AppContext.Provider value={{ handleSuccess }}>
       <div className="header">
         <img src={headerImage} alt="Your Image" className="header-image" />
         <nav>
@@ -697,7 +718,7 @@ function App() {
           </footer>
         </div>
       </div>
-    </body>
+    </AppContext.Provider>
   );
 }
 
