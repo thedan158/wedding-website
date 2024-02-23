@@ -1,4 +1,6 @@
 import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { Bounce } from "react-toastify";
+
 import headerImage from "./assets/images/header2.jpg";
 import hy from "./assets/images/double-happiness (4).png";
 import std from "./assets/images/save-the-date.png";
@@ -28,6 +30,7 @@ import anh13 from "./assets/images/anh13.jpg";
 import anh14 from "./assets/images/anh14.jpg";
 import CountdownClock from "./Countdown";
 import { toast } from "react-toastify";
+import { useMediaQuery } from "react-responsive";
 
 function SimpleSlider() {
   var settings = {
@@ -352,6 +355,9 @@ export const AppContext = createContext();
 function App() {
   const toastId = useRef(null);
 
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+
+  const toastPosition = isMobile ? "top-center" : "top-right";
   const [audioError, setAudioError] = useState(false);
   const [audioPlayed, setAudioPlayed] = useState(false);
   const [audioEnabled, setAudioEnabled] = useState(true); // Track whether the audio is enabled or disabled
@@ -368,7 +374,7 @@ function App() {
   const handleSuccess = () => {
     toast.dismiss();
     toastId.current = toast("🦄 Bạn đã gửi lời chúc thành công !", {
-      position: "top-right",
+      position: toastPosition,
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -376,6 +382,7 @@ function App() {
       draggable: true,
       progress: undefined,
       theme: "light",
+      transition: Bounce,
     });
     console.log("sent");
   };
