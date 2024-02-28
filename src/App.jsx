@@ -545,7 +545,7 @@ function App() {
             <img src={std} width={200} height={200} />
             <h2> Tiệc trà nhà gái</h2>
             <div className="text">
-              19h, thứ 5, ngày 7 tháng 3 năm 2024 <br />
+              19h, thứ 6, ngày 8 tháng 3 năm 2024 <br />
               Thôn Đông Sơn, Kỳ Phong, H. Kỳ Anh, Hà TĨnh
             </div>
             <h2> Lễ Đính Hôn</h2>
@@ -719,6 +719,15 @@ function App() {
             <h2>Phan Thị Phượng: 0986856870</h2>
             <div className="text">
               © 2024 for Hiếu and Phượng. Made by{" "}
+              <a
+                href="https://www.facebook.com/people/Nguyen-The-Dan/pfbid0QhAmLYf4bL1RuovLcz4p8Y7rywbK9EGAxLPATiXWprVgWZ3SLG4b7VsqoLDXtmqul/"
+                className="text"
+              >
+                @NTDAN
+              </a>
+            </div>
+            <div className="text">
+              Liên hệ làm web qua  
               <a
                 href="https://www.facebook.com/people/Nguyen-The-Dan/pfbid0QhAmLYf4bL1RuovLcz4p8Y7rywbK9EGAxLPATiXWprVgWZ3SLG4b7VsqoLDXtmqul/"
                 className="text"
