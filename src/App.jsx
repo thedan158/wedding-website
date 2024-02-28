@@ -480,7 +480,7 @@ function App() {
           </ul>
         </nav>
       </div>
-      <div className="home hz-margin">
+      <div className="home">
         <h3 style={{ margin: 20 }}>CHÚNG MÌNH SẮP CƯỚI NHAU</h3>
         <h1>Hiếu & Phượng</h1>
         <div className="container-out">
@@ -532,29 +532,64 @@ function App() {
               Ngoại Thương
             </h2>
             <h3>TX. Kỳ Anh, Hà Tĩnh</h3>
+            <div
+              onClick={() =>
+                window.open(
+                  "https://www.google.com/maps/place/Kh%C3%A1ch+s%E1%BA%A1n+Ngo%E1%BA%A1i+Th%C6%B0%C6%A1ng/@18.0772729,106.2868121,17z/data=!3m1!4b1!4m9!3m8!1s0x313889b7a46e7d63:0xff459b9b877b614f!5m2!4m1!1i2!8m2!3d18.0772678!4d106.289387!16s%2Fg%2F1tgm0bbj?hl=vi-VN&entry=ttu"
+                )
+              }
+              className="text links"
+              style={{ marginTop: 18 }}
+            >
+              GOOGLE MAPS
+            </div>
           </div>
           <div className="home-img" id="home-img-lg"></div>
         </div>
       </div>
 
       <div className="home-img home-img-sm"></div>
-      <div className="timeline hz-margin reveal">
+      <div className="timeline reveal">
         <div className="timeline-container">
           <div className="timeline-img"></div>
           <div className="timings">
             <img src={std} width={200} height={200} />
+            <h2> Lễ Đính Hôn</h2>
+            <div className="text">8h, thứ 6, ngày 8 tháng 3 năm 2024</div>
             <h2> Tiệc trà nhà gái</h2>
             <div className="text">
               19h, thứ 6, ngày 8 tháng 3 năm 2024 <br />
               Thôn Đông Sơn, Kỳ Phong, H. Kỳ Anh, Hà TĨnh
             </div>
-            <h2> Lễ Đính Hôn</h2>
-            <div className="text">8h, thứ 6, ngày 8 tháng 3 năm 2024</div>
+            {isMobile && (
+              <div
+                onClick={() =>
+                  window.open(
+                    "https://www.google.com/maps/place/18%C2%B011'43.8%22N+106%C2%B010'27.0%22E/@18.195507,106.1716031,17z/data=!3m1!4b1!4m4!3m3!8m2!3d18.195507!4d106.174178?entry=ttu"
+                  )
+                }
+                className="text links"
+              >
+                GOOGLE MAPS
+              </div>
+            )}
             <h2> Tiệc trà nhà trai</h2>
             <div className="text">
               19h, thứ 6, ngày 8 tháng 3 năm 2024 <br />
               Số 2, Ngõ 12 Xuân Diệu, P. Hưng Trí, Tx. Kỳ Anh
             </div>
+            {isMobile && (
+              <div
+                onClick={() =>
+                  window.open(
+                    "https://www.google.com/maps/place/18%C2%B004'00.5%22N+106%C2%B017'41.2%22E/@18.0667741,106.2946565,20.5z/data=!4m4!3m3!8m2!3d18.066808!4d106.294778?entry=ttu"
+                  )
+                }
+                className="text links"
+              >
+                GOOGLE MAPS
+              </div>
+            )}
             <h2>Lễ Thành Hôn</h2>
             <div className="text">
               11h, thứ 7, ngày 9 tháng 3 năm 2024 <br />
@@ -605,7 +640,7 @@ function App() {
             </div>
           </div>
 
-          <div className="gallery hz-margin reveal">
+          <div className="gallery reveal">
             <div className="gallery-img"></div>
             <div className="gallery-img"></div>
             <div className="gallery-img"></div>
@@ -727,7 +762,7 @@ function App() {
               </a>
             </div>
             <div className="text">
-              Liên hệ làm web qua  
+              Liên hệ làm web qua
               <a
                 href="https://www.facebook.com/people/Nguyen-The-Dan/pfbid0QhAmLYf4bL1RuovLcz4p8Y7rywbK9EGAxLPATiXWprVgWZ3SLG4b7VsqoLDXtmqul/"
                 className="text"
